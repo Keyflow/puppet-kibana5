@@ -53,8 +53,9 @@ class kibana5::install (
           before   => Package['kibana5'],
         }
         package { 'kibana5':
-          ensure => $version,
-          name   => 'kibana',
+          ensure      => $version,
+          name        => 'kibana',
+          require     => Class['apt::update'],
         }
       }
 
